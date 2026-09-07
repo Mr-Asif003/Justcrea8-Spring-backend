@@ -101,11 +101,7 @@ existing API client layer. To integrate this backend you'll want to:
    401 → refresh-token retry. See `frontend-integration/apiClient.js` for a ready-to-drop-in version.
 2. Swap `AuthProvider.jsx`'s Firebase calls for calls to `/api/auth/*`, storing the returned tokens
    (e.g. in memory + `httpOnly`-style handling, or `localStorage` for a simpler first pass).
-3. Replace direct Firestore reads/writes in your project/team/task pages with calls to the matching REST
-   endpoints above.
+
 
 This is a page-by-page migration — happy to wire up specific pages once you're ready; just point me at them.
 
-## Next (Phase 2)
-Notes, Todos, Blog, Polls, project Chat, and Group Discussion Rooms — the last two using the STOMP
-WebSocket endpoint (`/ws`) already configured with JWT handshake auth in `config/WebSocketConfig.java`.
